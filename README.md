@@ -1,6 +1,6 @@
-# vinci/all
+# dev
 
-vinci development simple and fun with all-in-one packages set up.
+vinci development made simple and enjoyable.
 
 ## Prerequisites
 
@@ -9,12 +9,12 @@ vinci development simple and fun with all-in-one packages set up.
 
 ## Set up
 
-Clone all the repositories:
+Clone all the package's repositories (only missing repositories will be cloned):
 ```bash
 $ make clone
 ```
 
-Setup packages symlinks in $GOPATH (optional):
+Create symlinks in $GOPATH (optional):
 ```bash
 $ make link
 ```
@@ -24,6 +24,16 @@ $ make link
 Run all package tests:
 ```bash
 $ make test
+```
+
+Lint all packages:
+```bash
+$ make lint
+```
+
+Run all:
+```bash
+$ make
 ```
 
 Get SLOC:
