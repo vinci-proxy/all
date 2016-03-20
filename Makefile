@@ -28,6 +28,7 @@ clone:
 	@if [ ! -d utils ]; then git clone https://github.com/vinci-proxy/utils.git; fi;
 	@if [ ! -d route ]; then git clone https://github.com/vinci-proxy/route.git; fi;
 	@if [ ! -d vinci ]; then git clone https://github.com/vinci-proxy/vinci.git; fi;
+	@if [ ! -d web ]; then git clone https://github.com/vinci-proxy/vinci-proxy.github.io.git web; fi;
 
 link:
 	mkdir -p $(GOPATH)/src/gopkg.in/vinci-proxy
