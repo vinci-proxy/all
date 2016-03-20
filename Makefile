@@ -31,7 +31,6 @@ clone:
 	@if [ ! -d pat ]; then git clone https://github.com/vinci-proxy/pat.git; fi;
 	@if [ ! -d replay ]; then git clone https://github.com/vinci-proxy/replay.git; fi;
 	@if [ ! -d utils ]; then git clone https://github.com/vinci-proxy/utils.git; fi;
-	@if [ ! -d route ]; then git clone https://github.com/vinci-proxy/route.git; fi;
 	@if [ ! -d vinci ]; then git clone https://github.com/vinci-proxy/vinci.git; fi;
 	@if [ ! -d web ]; then git clone https://github.com/vinci-proxy/vinci-proxy.github.io.git web; fi;
 
@@ -45,5 +44,4 @@ link:
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/pat.v0 ]; then ln -s $(PWD)/pat $(GOPATH)/src/gopkg.in/vinci-proxy/pat.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/replay.v0 ]; then ln -s $(PWD)/replay $(GOPATH)/src/gopkg.in/vinci-proxy/replay.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/utils.v0 ]; then ln -s $(PWD)/utils $(GOPATH)/src/gopkg.in/vinci-proxy/utils.v0; fi;
-	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/route.v0 ]; then ln -s $(PWD)/route $(GOPATH)/src/gopkg.in/vinci-proxy/route.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/vinci.v0 ]; then ln -s $(PWD)/vinci $(GOPATH)/src/gopkg.in/vinci-proxy/vinci.v0; fi;
