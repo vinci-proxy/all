@@ -1,3 +1,4 @@
+
 default: all
 
 all: test vet lint
@@ -17,6 +18,10 @@ vet:
 sloc:
 	wc -l */**.go
 
+web:
+	cd web && make 
+	cd web && git commit -am 'feat(docs): update site' && git push origin master
+
 clone:
 	@if [ ! -d context ]; then git clone https://github.com/vinci-proxy/context.git; fi;
 	@if [ ! -d forward ]; then git clone https://github.com/vinci-proxy/forward.git; fi;
@@ -32,13 +37,13 @@ clone:
 
 link:
 	mkdir -p $(GOPATH)/src/gopkg.in/vinci-proxy
-	ln -s $(pwd)/context $(GOPATH)/src/gopkg.in/vinci-proxy/context.v0
-	ln -s $(pwd)/forward $(GOPATH)/src/gopkg.in/vinci-proxy/forward.v0
-	ln -s $(pwd)/intercept $(GOPATH)/src/gopkg.in/vinci-proxy/intercept.v0
-	ln -s $(pwd)/layer $(GOPATH)/src/gopkg.in/vinci-proxy/layer.v0
-	ln -s $(pwd)/mux $(GOPATH)/src/gopkg.in/vinci-proxy/mux.v0
-	ln -s $(pwd)/pat $(GOPATH)/src/gopkg.in/vinci-proxy/pat.v0
-	ln -s $(pwd)/replay $(GOPATH)/src/gopkg.in/vinci-proxy/replay.v0
-	ln -s $(pwd)/utils $(GOPATH)/src/gopkg.in/vinci-proxy/utils.v0
-	ln -s $(pwd)/route $(GOPATH)/src/gopkg.in/vinci-proxy/route.v0
-	ln -s $(pwd)/vinci $(GOPATH)/src/gopkg.in/vinci-proxy/vinci.v0
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/context.v0 ]; then ln -s $(PWD)/context $(GOPATH)/src/gopkg.in/vinci-proxy/context.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/forward.v0 ]; then ln -s $(PWD)/forward $(GOPATH)/src/gopkg.in/vinci-proxy/forward.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/intercept.v0 ]; then ln -s $(PWD)/intercept $(GOPATH)/src/gopkg.in/vinci-proxy/intercept.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/layer.v0 ]; then ln -s $(PWD)/layer $(GOPATH)/src/gopkg.in/vinci-proxy/layer.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/mux.v0 ]; then ln -s $(PWD)/mux $(GOPATH)/src/gopkg.in/vinci-proxy/mux.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/pat.v0 ]; then ln -s $(PWD)/pat $(GOPATH)/src/gopkg.in/vinci-proxy/pat.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/replay.v0 ]; then ln -s $(PWD)/replay $(GOPATH)/src/gopkg.in/vinci-proxy/replay.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/utils.v0 ]; then ln -s $(PWD)/utils $(GOPATH)/src/gopkg.in/vinci-proxy/utils.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/route.v0 ]; then ln -s $(PWD)/route $(GOPATH)/src/gopkg.in/vinci-proxy/route.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinci-proxy/vinci.v0 ]; then ln -s $(PWD)/vinci $(GOPATH)/src/gopkg.in/vinci-proxy/vinci.v0; fi;
