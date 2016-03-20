@@ -36,6 +36,11 @@ Run all:
 $ make
 ```
 
+Update docs changes and publish them:
+```bash
+$ make web
+```
+
 Get SLOC:
 ```bash
 $ make sloc
