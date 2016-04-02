@@ -1,6 +1,6 @@
 # dev
 
-vinci development made simple and enjoyable.
+vinxi development made simple and enjoyable.
 
 ## Prerequisites
 
