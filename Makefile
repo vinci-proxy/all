@@ -36,6 +36,10 @@ clone:
 	@if [ ! -d vinxi ]; then git clone https://github.com/vinxi/vinxi.git; fi;
 	@if [ ! -d trace ]; then git clone https://github.com/vinxi/trace.git; fi;
 	@if [ ! -d web ]; then git clone https://github.com/vinxi/vinxi.github.io.git web; fi;
+	@if [ ! -d balancer ]; then git clone https://github.com/vinxi/balancer.git; fi;
+	@if [ ! -d metrics ]; then git clone https://github.com/vinxi/metrics.git; fi;
+	@if [ ! -d trace ]; then git clone https://github.com/vinxi/trace.git; fi;
+	@if [ ! -d consul ]; then git clone https://github.com/vinxi/consul.git; fi;
 
 pull:
 	@if [ -d context ]; then git --work-tree=./context --git-dir=./context/.git pull origin master; fi;
@@ -49,6 +53,10 @@ pull:
 	@if [ -d vinxi ]; then git --work-tree=./vinxi --git-dir=./vinxi/.git pull origin master; fi;
 	@if [ -d trace ]; then git --work-tree=./trace --git-dir=./trace/.git pull origin master; fi;
 	@if [ -d web ]; then git --work-tree=./web --git-dir=./web/.git pull origin master; fi;
+	@if [ -d balancer ]; then git --work-tree=./balancer --git-dir=./balancer/.git pull origin master; fi;
+	@if [ -d metrics ]; then git --work-tree=./metrics --git-dir=./metrics/.git pull origin master; fi;
+	@if [ -d trace ]; then git --work-tree=./trace --git-dir=./trace/.git pull origin master; fi;
+	@if [ -d consul ]; then git --work-tree=./consul --git-dir=./consul/.git pull origin master; fi;
 
 link:
 	mkdir -p $(GOPATH)/src/gopkg.in/vinxi
@@ -62,3 +70,7 @@ link:
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/utils.v0 ]; then ln -s $(PWD)/utils $(GOPATH)/src/gopkg.in/vinxi/utils.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/vinxi.v0 ]; then ln -s $(PWD)/vinxi $(GOPATH)/src/gopkg.in/vinxi/vinxi.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/trace.v0 ]; then ln -s $(PWD)/trace $(GOPATH)/src/gopkg.in/vinxi/trace.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/balancer.v0 ]; then ln -s $(PWD)/balancer $(GOPATH)/src/gopkg.in/vinxi/balancer.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/metrics.v0 ]; then ln -s $(PWD)/metrics $(GOPATH)/src/gopkg.in/vinxi/metrics.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/trace.v0 ]; then ln -s $(PWD)/trace $(GOPATH)/src/gopkg.in/vinxi/trace.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/consul.v0 ]; then ln -s $(PWD)/consul $(GOPATH)/src/gopkg.in/vinxi/consul.v0; fi;
