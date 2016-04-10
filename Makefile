@@ -1,18 +1,17 @@
-
 default: all
 
 all: test vet lint
 
-test: 
+test:
 	go test ./...
 
-fmt: 
+fmt:
 	gofmt -s -d ./...
 
-lint: 
+lint:
 	golint ./...
 
-vet: 
+vet:
 	go vet ./...
 
 sloc:
@@ -21,7 +20,7 @@ sloc:
 install: clone link
 
 web:
-	cd web && make 
+	cd web && make
 	cd web && git commit -am 'feat(docs): update site' && git push origin master
 
 clone:
@@ -40,6 +39,7 @@ clone:
 	@if [ ! -d metrics ]; then git clone https://github.com/vinxi/metrics.git; fi;
 	@if [ ! -d trace ]; then git clone https://github.com/vinxi/trace.git; fi;
 	@if [ ! -d consul ]; then git clone https://github.com/vinxi/consul.git; fi;
+	@if [ ! -d log ]; then git clone https://github.com/vinxi/log.git; fi;
 	@if [ ! -d auth ]; then git clone https://github.com/vinxi/auth.git; fi;
 
 pull:
@@ -58,6 +58,7 @@ pull:
 	@if [ -d metrics ]; then git --work-tree=./metrics --git-dir=./metrics/.git pull origin master; fi;
 	@if [ -d trace ]; then git --work-tree=./trace --git-dir=./trace/.git pull origin master; fi;
 	@if [ -d consul ]; then git --work-tree=./consul --git-dir=./consul/.git pull origin master; fi;
+	@if [ -d log ]; then git --work-tree=./log --git-dir=./log/.git pull origin master; fi;
 	@if [ -d auth ]; then git --work-tree=./auth --git-dir=./auth/.git pull origin master; fi;
 
 link:
