@@ -76,5 +76,5 @@ link:
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/metrics.v0 ]; then ln -s $(PWD)/metrics $(GOPATH)/src/gopkg.in/vinxi/metrics.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/trace.v0 ]; then ln -s $(PWD)/trace $(GOPATH)/src/gopkg.in/vinxi/trace.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/consul.v0 ]; then ln -s $(PWD)/consul $(GOPATH)/src/gopkg.in/vinxi/consul.v0; fi;
-	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/log.v0 ]; then ln -s $(PWD)/log $(GOPATH)/src/gopkg.in/vinxi/log.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/apachelog.v0 ]; then ln -s $(PWD)/apachelog $(GOPATH)/src/gopkg.in/vinxi/apachelog.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/auth.v0 ]; then ln -s $(PWD)/auth $(GOPATH)/src/gopkg.in/vinxi/auth.v0; fi;
