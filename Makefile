@@ -42,6 +42,7 @@ clone:
 	@if [ ! -d auth ]; then git clone https://github.com/vinxi/auth.git; fi;
 	@if [ ! -d ratelimit ]; then git clone https://github.com/vinxi/ratelimit.git; fi;
 	@if [ ! -d log ]; then git clone https://github.com/vinxi/log.git; fi;
+	@if [ ! -d cors ]; then git clone https://github.com/vinxi/cors.git; fi;
 
 pull:
 	@if [ -d context ]; then git --work-tree=./context --git-dir=./context/.git pull origin master; fi;
@@ -62,6 +63,7 @@ pull:
 	@if [ -d auth ]; then git --work-tree=./auth --git-dir=./auth/.git pull origin master; fi;
 	@if [ -d ratelimit ]; then git --work-tree=./ratelimit --git-dir=./ratelimit/.git pull origin master; fi;
 	@if [ -d log ]; then git --work-tree=./log --git-dir=./log/.git pull origin master; fi;
+	@if [ -d cors ]; then git --work-tree=./cors --git-dir=./cors/.git pull origin master; fi;
 
 link:
 	mkdir -p $(GOPATH)/src/gopkg.in/vinxi
@@ -82,3 +84,4 @@ link:
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/auth.v0 ]; then ln -s $(PWD)/auth $(GOPATH)/src/gopkg.in/vinxi/auth.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/ratelimit.v0 ]; then ln -s $(PWD)/ratelimit $(GOPATH)/src/gopkg.in/vinxi/ratelimit.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/log.v0 ]; then ln -s $(PWD)/log $(GOPATH)/src/gopkg.in/vinxi/log.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/cors.v0 ]; then ln -s $(PWD)/cors $(GOPATH)/src/gopkg.in/vinxi/cors.v0; fi;
