@@ -90,4 +90,4 @@ link:
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/log.v0 ]; then ln -s $(PWD)/log $(GOPATH)/src/gopkg.in/vinxi/log.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/cors.v0 ]; then ln -s $(PWD)/cors $(GOPATH)/src/gopkg.in/vinxi/cors.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/ip.v0 ]; then ln -s $(PWD)/ip $(GOPATH)/src/gopkg.in/vinxi/ip.v0; fi;
-	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/sandbox.v0 ]; then ln -s $(PWD)/ip $(GOPATH)/src/gopkg.in/vinxi/sandbox.v0; fi;
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/sandbox.v0 ]; then ln -s $(PWD)/sandbox $(GOPATH)/src/gopkg.in/vinxi/sandbox.v0; fi;
