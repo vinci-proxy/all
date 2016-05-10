@@ -3,7 +3,7 @@ default: all
 all: test vet lint
 
 test:
-	go test ./...
+	go test -v -race ./...
 
 fmt:
 	gofmt -s -d ./...
@@ -24,12 +24,7 @@ web:
 	cd web && git commit -am 'feat(docs): update site' && git push origin master
 
 clone:
-	@if [ ! -d context ]; then git clone https://github.com/vinxi/context.git; fi;
-	@if [ ! -d forward ]; then git clone https://github.com/vinxi/forward.git; fi;
 	@if [ ! -d intercept ]; then git clone https://github.com/vinxi/intercept.git; fi;
-	@if [ ! -d layer ]; then git clone https://github.com/vinxi/layer.git; fi;
-	@if [ ! -d mux ]; then git clone https://github.com/vinxi/mux.git; fi;
-	@if [ ! -d router ]; then git clone https://github.com/vinxi/router.git; fi;
 	@if [ ! -d replay ]; then git clone https://github.com/vinxi/replay.git; fi;
 	@if [ ! -d utils ]; then git clone https://github.com/vinxi/utils.git; fi;
 	@if [ ! -d vinxi ]; then git clone https://github.com/vinxi/vinxi.git; fi;
@@ -47,12 +42,7 @@ clone:
 	@if [ ! -d sandbox ]; then git clone https://github.com/vinxi/sandbox.git; fi;
 
 pull:
-	@if [ -d context ]; then git --work-tree=./context --git-dir=./context/.git pull origin master; fi;
-	@if [ -d forward ]; then git --work-tree=./forward --git-dir=./forward/.git pull origin master; fi;
 	@if [ -d intercept ]; then git --work-tree=./intercept --git-dir=./intercept/.git pull origin master; fi;
-	@if [ -d layer ]; then git --work-tree=./layer --git-dir=./layer/.git pull origin master; fi;
-	@if [ -d mux ]; then git --work-tree=./mux --git-dir=./mux/.git pull origin master; fi;
-	@if [ -d router ]; then git --work-tree=./router --git-dir=./router/.git pull origin master; fi;
 	@if [ -d replay ]; then git --work-tree=./replay --git-dir=./replay/.git pull origin master; fi;
 	@if [ -d utils ]; then git --work-tree=./utils --git-dir=./utils/.git pull origin master; fi;
 	@if [ -d vinxi ]; then git --work-tree=./vinxi --git-dir=./vinxi/.git pull origin master; fi;
@@ -71,12 +61,7 @@ pull:
 
 link:
 	mkdir -p $(GOPATH)/src/gopkg.in/vinxi
-	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/context.v0 ]; then ln -s $(PWD)/context $(GOPATH)/src/gopkg.in/vinxi/context.v0; fi;
-	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/forward.v0 ]; then ln -s $(PWD)/forward $(GOPATH)/src/gopkg.in/vinxi/forward.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/intercept.v0 ]; then ln -s $(PWD)/intercept $(GOPATH)/src/gopkg.in/vinxi/intercept.v0; fi;
-	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/layer.v0 ]; then ln -s $(PWD)/layer $(GOPATH)/src/gopkg.in/vinxi/layer.v0; fi;
-	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/mux.v0 ]; then ln -s $(PWD)/mux $(GOPATH)/src/gopkg.in/vinxi/mux.v0; fi;
-	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/router.v0 ]; then ln -s $(PWD)/router $(GOPATH)/src/gopkg.in/vinxi/router.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/replay.v0 ]; then ln -s $(PWD)/replay $(GOPATH)/src/gopkg.in/vinxi/replay.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/utils.v0 ]; then ln -s $(PWD)/utils $(GOPATH)/src/gopkg.in/vinxi/utils.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/vinxi.v0 ]; then ln -s $(PWD)/vinxi $(GOPATH)/src/gopkg.in/vinxi/vinxi.v0; fi;
