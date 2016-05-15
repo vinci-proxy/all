@@ -24,6 +24,7 @@ web:
 	cd web && git commit -am 'feat(docs): update site' && git push origin master
 
 clone:
+	@if [ ! -d vinxictl ]; then git clone https://github.com/vinxi/vinxictl.git; fi;
 	@if [ ! -d intercept ]; then git clone https://github.com/vinxi/intercept.git; fi;
 	@if [ ! -d replay ]; then git clone https://github.com/vinxi/replay.git; fi;
 	@if [ ! -d utils ]; then git clone https://github.com/vinxi/utils.git; fi;
@@ -42,6 +43,7 @@ clone:
 	@if [ ! -d sandbox ]; then git clone https://github.com/vinxi/sandbox.git; fi;
 
 pull:
+	@if [ -d vinxictl ]; then git --work-tree=./vinxictl --git-dir=./vinxictl/.git pull origin master; fi;
 	@if [ -d intercept ]; then git --work-tree=./intercept --git-dir=./intercept/.git pull origin master; fi;
 	@if [ -d replay ]; then git --work-tree=./replay --git-dir=./replay/.git pull origin master; fi;
 	@if [ -d utils ]; then git --work-tree=./utils --git-dir=./utils/.git pull origin master; fi;
@@ -61,6 +63,7 @@ pull:
 
 link:
 	mkdir -p $(GOPATH)/src/gopkg.in/vinxi
+	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/vinxictl.v0 ]; then ln -s $(PWD)/vinxictl $(GOPATH)/src/gopkg.in/vinxi/vinxictl.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/intercept.v0 ]; then ln -s $(PWD)/intercept $(GOPATH)/src/gopkg.in/vinxi/intercept.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/replay.v0 ]; then ln -s $(PWD)/replay $(GOPATH)/src/gopkg.in/vinxi/replay.v0; fi;
 	@if [ ! -d $(GOPATH)/src/gopkg.in/vinxi/utils.v0 ]; then ln -s $(PWD)/utils $(GOPATH)/src/gopkg.in/vinxi/utils.v0; fi;
